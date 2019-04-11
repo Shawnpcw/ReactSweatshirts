@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import {
   Collapse,
   Navbar,
@@ -35,13 +36,10 @@ export default class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <AnchorLink href="#home">home</AnchorLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#home">home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#test">test</NavLink>
+                <AnchorLink href="#inv">Information</AnchorLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>

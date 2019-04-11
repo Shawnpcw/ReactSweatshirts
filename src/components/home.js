@@ -1,15 +1,12 @@
 import React from "react";
-import { Jumbotron, Button, Container } from "reactstrap";
-
+import { Jumbotron, Button, NavLink, Container } from "reactstrap";
 export default function home() {
   return (
     <div>
       <Jumbotron fluid>
         <Container fluid>
-          <h1 className="display-3">Welcome!</h1>
-          <p className="lead">
-            skdljfaaslkjdfaklsmvadljgioewnsdlkmnvrouiansdl;fnrouansdjnfadsj;nfjsdaf
-          </p>
+          <h1 className="display-3">Welcome To [placeholder]!</h1>
+          <p className="lead">[placeholder]</p>
         </Container>
       </Jumbotron>
     </div>
