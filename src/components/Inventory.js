@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Route, Switch, Link } from "react-router-dom";
+
 import { Row, Col } from "reactstrap";
 const tempItems = [
   {
@@ -92,19 +94,40 @@ const tempItems = [
     price: 25.0,
     img:
       "https://www.coolasamoose.com/DSN/coolasamoose/Commerce/ProductImages/mn1_000083.jpg"
+  },
+  {
+    id: 13,
+    name: "temp2",
+    desc: "this is description for temp2",
+    price: 25.0,
+    img:
+      "https://www.coolasamoose.com/DSN/coolasamoose/Commerce/ProductImages/mn1_000083.jpg"
   }
 ];
 export default class Inventory extends Component {
   render() {
-    this.items = tempItems.map((item, key) => (
+    this.items = tempItems.map((item, _key) => (
       <div className="itemStyle">
-        <div className="marginAuto">{item.name}</div>
-        <div>
+        {/* {/ <div className="marginAuto">  /} */}
+        {item.name}
+        {/* {/ </div> /} */}
+        <Link to={`/item/${item.id}`}>
           <img src={item.img} alt="" height="200rem" className="marginAuto" />
-          <p>{item.desc}</p>
-          Price:{item.price}
-          <p />
-        </div>
+        </Link>
+        <button
+          className="fas fa-car-plus"
+          onClick={() => {
+            console.log("Clicked cart icon");
+          }}
+        >
+          {/* {/ disabled={incart ? true : false} /} */}
+          {/* {/ need to add incart in the object(list of items) /} */}
+          {/* {/ {inCart ? ( <p disabled>{""}in cart  */}
+          {/* </p>  */}
+          {/* ):( <i className="fas fa-car-plust"/>) } /} */}
+        </button>
+        <p>{item.desc}</p>
+        Price:{item.price}
       </div>
     ));
     return this.items;

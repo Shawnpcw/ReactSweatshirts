@@ -1,0 +1,19 @@
+.infowrapper {
+  /* border: 1px black solid; */
+  display: inline-block;
+  width: 50rem;
+  align-content: left;
+  text-align: left;
+}
+.title {
+  /* border: 1px red solid; */
+}
+.desc {
+  /* border: 1px green solid; */
+}
+.imgclass {
+  /* border: 1px yellow solid; */
+  display: inline-block;
+  vertical-align: top;
+  align-content: left;
+}

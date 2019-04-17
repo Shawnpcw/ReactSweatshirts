@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { HashLink as Link } from "react-router-hash-link";
 import {
   Collapse,
   Navbar,
@@ -21,6 +22,25 @@ export default class Header extends Component {
     this.state = {
       isOpen: false
     };
+    if (typeof window !== "undefined") {
+      let prevScrollpos = window.pageYOffset;
+      window.onscroll = function() {
+        const maxScroll = document.body.clientHeight - window.innerHeight;
+        let currentScrollPos = window.pageYOffset;
+        if (
+          (maxScroll > 0 &&
+            prevScrollpos > currentScrollPos &&
+            prevScrollpos <= maxScroll) ||
+          (maxScroll <= 0 && prevScrollpos > currentScrollPos) ||
+          (prevScrollpos <= 0 && currentScrollPos <= 0)
+        ) {
+          document.getElementById("navbar").style.top = "0";
+        } else {
+          document.getElementById("navbar").style.top = "-5.0rem"; // adjustable based your need
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    }
   }
   toggle() {
     this.setState({
@@ -30,28 +50,26 @@ export default class Header extends Component {
   render() {
     return (
       <div style={{ marginBottom: "2rem" }}>
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" light expand="md" className="sticky" id="navbar">
           <NavbarBrand href="/">E-Commerce Test</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <AnchorLink href="#home">home</AnchorLink>
+                <NavLink>
+                  <Link to="/">Home</Link>
+                </NavLink>
               </NavItem>
+              {/* <NavItem>
+                <NavLink>
+                  <AnchorLink href="#inv">Inventory</AnchorLink>
+                </NavLink>
+              </NavItem> */}
               <NavItem>
-                <AnchorLink href="#inv">Information</AnchorLink>
+                <NavLink>
+                  <Link to="/checkout"> Checkout</Link>
+                </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
             </Nav>
           </Collapse>
         </Navbar>
