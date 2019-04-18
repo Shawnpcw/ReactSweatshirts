@@ -90,7 +90,7 @@ export default class CarouselCom extends Component {
     });
 
     return (
-      <div>
+      <div style={{ height: "70rem" }}>
         <Carousel
           activeIndex={activeIndex}
           next={this.next}

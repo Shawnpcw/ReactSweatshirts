@@ -12,15 +12,29 @@ body {
 .itemStyle {
   /* height: 40rem; */
   width: 25rem;
-  border: 1px black solid;
-  border-radius: 20px;
+  /* border: 1px rgba(88, 86, 86, 0.2) solid; */
+  border-color: transparent;
+  border-radius: 10px;
   text-align: center;
   display: inline-block;
   margin: 1rem;
 }
+
+.itemStyle :hover {
+  border:0.08 rem solid rgba(116, 110, 110, 0.2);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  /* overflow: hidden; */
+}
+
+.itemStyle :hover .marginAuto{
+  transform: scale(1.6);
+}
 .marginAuto {
-  margin: auto;
+  /* margin: auto;
   text-align: center;
+  border: 0px; */
+  transition: all 0.5s linear;
 }
 .App-header {
   background-color: #282c34;
@@ -44,4 +58,59 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.DetailContainer {
+  width: 2100px;
+  height: 1200px;
+  border-bottom: #dee0e4 solid;
+  border-top:  #dee0e4 solid;
+  
+  margin:50px 150px 50px 150px;
+  display: flex;
+  padding: 140px;
+}
+
+ .Image{
+  height: 800px;
+  width: 600px;
+  display: inline-block;
+  padding: 20px;
+  text-align: left;
+  margin-right: 70px;
+  /* border: rgb(233, 224, 224) solid; */
+}
+.ImgInfo{
+  padding: 30px;
+  height: 600px;
+  width: 700px;
+  /* border: rgb(233, 224, 224) solid; */
+  display: inline-block;
+  /* padding-left: 120px; */
+}
+
+.Image:hover {
+  transform: scale(1.5);
+  transition: all 0.5s linear;
+}
+
+.DeliveryInfo{
+  border: rgb(233, 224, 224) solid;
+  display: inline-block;
+  height: 900px;
+  width: 430px;
+  margin-left: 170px;
+  padding: 20px;
+  display: inline-block;
+  float:right;
+}
+
+#navbar {
+  transition: top 0.5s;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border: 1px rgb(207, 216, 226) solid;
 }

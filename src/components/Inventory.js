@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Row, Col } from "reactstrap";
+//import { Row, Col } from "reactstrap";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+const ProductContext  = React.createContext();
 const tempItems = [
   {
     id: 1,
@@ -94,19 +96,57 @@ const tempItems = [
       "https://www.coolasamoose.com/DSN/coolasamoose/Commerce/ProductImages/mn1_000083.jpg"
   }
 ];
+
+
+// handeleDetail = id => {
+//   const oneitem =this.getItem(id);
+//   this.setState (() => {
+//   return { detailProduct: oneitem };
+// });
+// }
+
 export default class Inventory extends Component {
+ state = {
+   items: tempItems
+ }
+  getItem = id =>{
+    const item = this.state.oneitem.find(item => item.id === id);
+    console.log(id); 
+    return item;
+    }
+
   render() {
-    this.items = tempItems.map((item, key) => (
-      <div className="itemStyle">
-        <div className="marginAuto">{item.name}</div>
-        <div>
-          <img src={item.img} alt="" height="200rem" className="marginAuto" />
-          <p>{item.desc}</p>
-          Price:{item.price}
-          <p />
-        </div>
-      </div>
-    ));
-    return this.items;
+    this.items = tempItems.map((item, _key) => (
+    <div className="itemStyle">
+      {/* <div className="marginAuto">  */}
+          {item.name} 
+      {/* </div> */}
+       {/* <div className="img-container" onClick={console.log('You clicked on Image')}> */}
+         
+         
+         <Link to={`/item/${item.id}`}>        
+            <img src={item.img} alt="" height="200rem" className="marginAuto" />
+         </Link>
+         <button className="fas fa-car-plus"  onClick={() => {console.log('Clicked cart icon');}}>
+         
+         
+         
+         
+         {/* disabled={incart ? true : false} */}
+         {/* need to add incart in the object(list of items) */}
+         {/* {inCart ? ( <p disabled>{""}in cart 
+         </p> 
+         ):( <i className="fas fa-car-plust"/>) } */}
+         </button>
+           <p>{item.desc}</p>
+            Price:{item.price}
+      {/* </div> */}
+    </div>));
+    return (this.items
+      //    <ProductContext.Provider 
+      // >
+      // {this.props.children}
+      );
+    
   }
 }
