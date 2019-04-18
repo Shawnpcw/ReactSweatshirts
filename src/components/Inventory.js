@@ -1,13 +1,7 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
 //import { Row, Col } from "reactstrap";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-const ProductContext  = React.createContext();
-=======
-import { Route, Switch, Link } from "react-router-dom";
-
-import { Row, Col } from "reactstrap";
->>>>>>> a58260fae421ba23225be26eb3517c642f400c1c
+const ProductContext = React.createContext();
 const tempItems = [
   {
     id: 1,
@@ -111,7 +105,6 @@ const tempItems = [
   }
 ];
 
-
 // handeleDetail = id => {
 //   const oneitem =this.getItem(id);
 //   this.setState (() => {
@@ -120,54 +113,22 @@ const tempItems = [
 // }
 
 export default class Inventory extends Component {
- state = {
-   items: tempItems
- }
-  getItem = id =>{
+  state = {
+    items: tempItems
+  };
+  getItem = id => {
     const item = this.state.oneitem.find(item => item.id === id);
-    console.log(id); 
+    console.log(id);
     return item;
-    }
+  };
 
   render() {
     this.items = tempItems.map((item, _key) => (
-<<<<<<< HEAD
-    <div className="itemStyle">
-      {/* <div className="marginAuto">  */}
-          {item.name} 
-      {/* </div> */}
-       {/* <div className="img-container" onClick={console.log('You clicked on Image')}> */}
-         
-         
-         <Link to={`/item/${item.id}`}>        
-            <img src={item.img} alt="" height="200rem" className="marginAuto" />
-         </Link>
-         <button className="fas fa-car-plus"  onClick={() => {console.log('Clicked cart icon');}}>
-         
-         
-         
-         
-         {/* disabled={incart ? true : false} */}
-         {/* need to add incart in the object(list of items) */}
-         {/* {inCart ? ( <p disabled>{""}in cart 
-         </p> 
-         ):( <i className="fas fa-car-plust"/>) } */}
-         </button>
-           <p>{item.desc}</p>
-            Price:{item.price}
-      {/* </div> */}
-    </div>));
-    return (this.items
-      //    <ProductContext.Provider 
-      // >
-      // {this.props.children}
-      );
-    
-=======
       <div className="itemStyle">
-        {/* {/ <div className="marginAuto">  /} */}
+        {/* <div className="marginAuto">  */}
         {item.name}
-        {/* {/ </div> /} */}
+        {/* </div> */}
+        {/* <div className="img-container" onClick={console.log('You clicked on Image')}> */}
         <Link to={`/item/${item.id}`}>
           <img src={item.img} alt="" height="200rem" className="marginAuto" />
         </Link>
@@ -177,17 +138,20 @@ export default class Inventory extends Component {
             console.log("Clicked cart icon");
           }}
         >
-          {/* {/ disabled={incart ? true : false} /} */}
-          {/* {/ need to add incart in the object(list of items) /} */}
-          {/* {/ {inCart ? ( <p disabled>{""}in cart  */}
-          {/* </p>  */}
-          {/* ):( <i className="fas fa-car-plust"/>) } /} */}
+          {/* disabled={incart ? true : false} */}
+          {/* need to add incart in the object(list of items) */}
+          {/* {inCart ? ( <p disabled>{""}in cart 
+         </p> 
+         ):( <i className="fas fa-car-plust"/>) } */}
         </button>
         <p>{item.desc}</p>
         Price:{item.price}
+        {/* </div> */}
       </div>
     ));
     return this.items;
->>>>>>> a58260fae421ba23225be26eb3517c642f400c1c
+    //    <ProductContext.Provider
+    // >
+    // {this.props.children}
   }
 }
