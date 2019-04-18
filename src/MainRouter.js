@@ -13,7 +13,6 @@ export default class MainRouter extends Component {
           <Route exact path="/" component={HomeComponent} />
           <Route path="/item/:id" component={ItemInformation} />
           <Route path="/checkout" component={Checkout} />
-        
         </Switch>
       </div>
     );

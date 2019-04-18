@@ -113,7 +113,14 @@ export default class CarouselCom extends Component {
             onClickHandler={this.next}
           />
         </Carousel>
-        <AnchorLink href="#inv">Scroll Down</AnchorLink>
+        <AnchorLink href="#inv">
+          <img
+            src="https://static.thenounproject.com/png/10897-200.png"
+            alt=""
+            height="30px"
+            width="30px"
+          />
+        </AnchorLink>
       </div>
     );
   }

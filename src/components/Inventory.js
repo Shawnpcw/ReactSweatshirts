@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 //import { Row, Col } from "reactstrap";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const ProductContext  = React.createContext();
+=======
+import { Route, Switch, Link } from "react-router-dom";
+
+import { Row, Col } from "reactstrap";
+>>>>>>> a58260fae421ba23225be26eb3517c642f400c1c
 const tempItems = [
   {
     id: 1,
@@ -94,6 +100,14 @@ const tempItems = [
     price: 25.0,
     img:
       "https://www.coolasamoose.com/DSN/coolasamoose/Commerce/ProductImages/mn1_000083.jpg"
+  },
+  {
+    id: 13,
+    name: "temp2",
+    desc: "this is description for temp2",
+    price: 25.0,
+    img:
+      "https://www.coolasamoose.com/DSN/coolasamoose/Commerce/ProductImages/mn1_000083.jpg"
   }
 ];
 
@@ -117,6 +131,7 @@ export default class Inventory extends Component {
 
   render() {
     this.items = tempItems.map((item, _key) => (
+<<<<<<< HEAD
     <div className="itemStyle">
       {/* <div className="marginAuto">  */}
           {item.name} 
@@ -148,5 +163,31 @@ export default class Inventory extends Component {
       // {this.props.children}
       );
     
+=======
+      <div className="itemStyle">
+        {/* {/ <div className="marginAuto">  /} */}
+        {item.name}
+        {/* {/ </div> /} */}
+        <Link to={`/item/${item.id}`}>
+          <img src={item.img} alt="" height="200rem" className="marginAuto" />
+        </Link>
+        <button
+          className="fas fa-car-plus"
+          onClick={() => {
+            console.log("Clicked cart icon");
+          }}
+        >
+          {/* {/ disabled={incart ? true : false} /} */}
+          {/* {/ need to add incart in the object(list of items) /} */}
+          {/* {/ {inCart ? ( <p disabled>{""}in cart  */}
+          {/* </p>  */}
+          {/* ):( <i className="fas fa-car-plust"/>) } /} */}
+        </button>
+        <p>{item.desc}</p>
+        Price:{item.price}
+      </div>
+    ));
+    return this.items;
+>>>>>>> a58260fae421ba23225be26eb3517c642f400c1c
   }
 }

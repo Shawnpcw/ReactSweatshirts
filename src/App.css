@@ -2,7 +2,7 @@
   text-align: center;
 }
 body {
-  /* overflow: hidden; */
+  /* / overflow: hidden; / */
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -10,9 +10,13 @@ body {
   pointer-events: none;
 }
 .itemStyle {
-  /* height: 40rem; */
+  /* / height: 40rem; / */
   width: 25rem;
+<<<<<<< HEAD
   /* border: 1px rgba(88, 86, 86, 0.2) solid; */
+=======
+  /* / border: 1px rgba(88, 86, 86, 0.2) solid; / */
+>>>>>>> a58260fae421ba23225be26eb3517c642f400c1c
   border-color: transparent;
   border-radius: 10px;
   text-align: center;
@@ -21,6 +25,7 @@ body {
 }
 
 .itemStyle :hover {
+<<<<<<< HEAD
   border:0.08 rem solid rgba(116, 110, 110, 0.2);
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.9);
   border-radius: 10px;
@@ -34,6 +39,21 @@ body {
   /* margin: auto;
   text-align: center;
   border: 0px; */
+=======
+  border: 0.08 rem solid rgba(116, 110, 110, 0.2);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  /* / overflow: hidden; / */
+}
+
+.itemStyle :hover .marginAuto {
+  transform: scale(1.4);
+}
+.marginAuto {
+  /* / margin: auto; */
+  /* text-align: center; */
+  /* border: 0px; / */
+>>>>>>> a58260fae421ba23225be26eb3517c642f400c1c
   transition: all 0.5s linear;
 }
 .App-header {
@@ -59,6 +79,7 @@ body {
     transform: rotate(360deg);
   }
 }
+<<<<<<< HEAD
 
 .DetailContainer {
   width: 2100px;
@@ -105,6 +126,8 @@ body {
   float:right;
 }
 
+=======
+>>>>>>> a58260fae421ba23225be26eb3517c642f400c1c
 #navbar {
   transition: top 0.5s;
 }
@@ -112,5 +135,8 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+<<<<<<< HEAD
   border: 1px rgb(207, 216, 226) solid;
+=======
+>>>>>>> a58260fae421ba23225be26eb3517c642f400c1c
 }
